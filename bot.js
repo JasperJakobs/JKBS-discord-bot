@@ -20,11 +20,11 @@ const client = new Client({
 });
 
 client.config = {
-    PREFIX: process.env.PREFIX
+    PREFIX: config.PREFIX
 };
 client.prefixCommands = new Collection();
 client.slashCommands = new Collection();
 
 initialLoaders(client);
 
-client.login(process.env.TOKEN);
+client.login(config.TOKEN);
