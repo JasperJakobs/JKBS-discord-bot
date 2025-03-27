@@ -12,8 +12,8 @@ export default {
 			client.user.setPresence({
 				activities: [
 					{
-						name: 'Eagles - Hotel California',
-						type: ActivityType.Listening
+						name: 'with your mother.',
+						type: ActivityType.Playing
 					}
 				],
 				status: "dnd",
