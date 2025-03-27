@@ -26,7 +26,16 @@ export default {
 
         // Check if messageContent is 'hond'
         if (messageContent.toLowerCase() === 'hond') {
-            return message.reply('https://images.dog.ceo/breeds/terrier-border/n02093754_3428.jpg');
+
+            // Fetch random dog image from Dog CEO API
+            const dogResponse = await fetch('https://dog.ceo/api/breeds/image/random');
+            const dogData = await dogResponse.json();
+            // Check if the response is successful
+            if (dogData.status !== 'success') {
+                return message.reply('Sorry, ik kon geen hond afbeelding vinden.');
+            }
+            // Send the dog image URL
+            return message.reply(dogData.message);
         }
 
         const reply = await anthropic.messages.create({
