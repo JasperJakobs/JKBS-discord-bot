@@ -1,7 +1,6 @@
 import { readdirSync } from 'fs';
 import path from 'path';
 import { pathToFileURL, fileURLToPath } from 'url';
-import config from '../config.js';
 
 export const loadCommands = async (client) => {
   const filename = fileURLToPath(import.meta.url);
