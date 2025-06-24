@@ -4,7 +4,6 @@ import {
     GatewayIntentBits,
 } from 'discord.js';
 import { initialLoaders } from './loaders/index.js';
-import { env } from 'process';
 
 
 const client = new Client({
@@ -20,11 +19,11 @@ const client = new Client({
 });
 
 client.config = {
-    PREFIX: env.PREFIX,
+    PREFIX: process.env.PREFIX,
 };
 client.prefixCommands = new Collection();
 client.slashCommands = new Collection();
 
 initialLoaders(client);
 
-client.login(env.TOKEN);
+client.login(process.env.TOKEN);
