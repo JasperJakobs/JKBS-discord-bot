@@ -1,10 +1,8 @@
 import { Events } from 'discord.js';
 import Anthropic from '@anthropic-ai/sdk';
 
-import config from '../config.js';
-
 const anthropic = new Anthropic({
-    apiKey: config.ANTHROPIC_API_KEY,
+    apiKey: env.ANTHROPIC_API_KEY,
 });
 
 export default {

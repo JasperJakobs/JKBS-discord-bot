@@ -3,8 +3,8 @@ import {
     Collection,
     GatewayIntentBits,
 } from 'discord.js';
-import config from './config.js';
 import { initialLoaders } from './loaders/index.js';
+import { env } from 'process';
 
 
 const client = new Client({
@@ -20,11 +20,11 @@ const client = new Client({
 });
 
 client.config = {
-    PREFIX: config.PREFIX
+    PREFIX: env.PREFIX,
 };
 client.prefixCommands = new Collection();
 client.slashCommands = new Collection();
 
 initialLoaders(client);
 
-client.login(config.TOKEN);
+client.login(env.TOKEN);
